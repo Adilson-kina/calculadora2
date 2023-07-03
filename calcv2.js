@@ -3,14 +3,23 @@ var num2 = 0;
 var screen = document.getElementById("screen");
 var resultado;
 var decimal;
-var mudar_valor = false
+var mudar_valor = false;
+var clicado = 0;
 function addnumber(choose){
+    if(clicado>0){
+        mudar_valor = false;
+        num = 0;
+        clicado = 0
+    }
     if(num == 0){
         num += choose;
     }
-    else{
+    else if(num>0){
         num = num*10 + choose;
     }
+    console.log(`o valor de clicado é ${clicado}`);
+    console.log(`o valor de choose é ${choose}`);
+    console.log(`o valor de num é ${num}`);
 }
 
 function takeoffnumber(){
@@ -52,6 +61,7 @@ function igual(){
         }
     num = resultado;
     resultado = 0;
+    clicado += 1;
 }
 function screenupdater(){
     if(mudar_valor == false){
@@ -60,6 +70,7 @@ function screenupdater(){
     requestAnimationFrame(screenupdater);
 }
 function limpa(){
+    clicado = 0;
     mudar_valor = false;
     resultado = 0;
     num = 0;
