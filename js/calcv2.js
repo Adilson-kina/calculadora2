@@ -1,10 +1,10 @@
-var num = 0;
-var num2 = 0;
-var screen = document.getElementById("screen");
-var resultado;
-var decimal;
-var mudar_valor = false;
-var clicado = 0;
+let num = 0;
+let num2 = 0;
+let screen = document.getElementById("screen");
+let resultado;
+let decimal;
+let mudar_valor = false;
+let clicado = 0;
 function addnumber(choose){
     if(clicado>0){
         mudar_valor = false;
@@ -23,9 +23,9 @@ function addnumber(choose){
 }
 
 function takeoffnumber(){
-    var tamanho = num.toString()
+    let tamanho = num.toString()
     tamanho = tamanho.length;
-    var takeoff = num.toString().split('');
+    let takeoff = num.toString().split('');
     takeoff[tamanho - 1] = "";
     num = takeoff.join("");
     if (num == ""){
